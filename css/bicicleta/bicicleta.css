@@ -17,12 +17,12 @@
   gap: 20px;
 }
 
-.bicicletas-imagens img {
+.bicicleta-imagens img {
   flex: 1;
   min-width: 200px;
 }
 
-.bicicletas-imagens img:first-child {
+.bicicleta-imagens img:first-child {
   min-width: 100%;
 }
 
