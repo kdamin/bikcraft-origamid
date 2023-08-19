@@ -29,38 +29,43 @@ parametros.forEach(ativarProduto)
 const perguntas = document.querySelectorAll('.perguntas button')
 
 function ativarPergunta(event) {
-  const pergunta = event.currentTarget;
-  const controls = pergunta.getAttribute('aria-controls');
-  const resposta = document.getElementById(controls);
+  const pergunta = event.currentTarget
+  const controls = pergunta.getAttribute('aria-controls')
+  const resposta = document.getElementById(controls)
 
- 
-  resposta.classList.toggle('ativa');
-  const ativa = resposta.classList.contains('ativa');
-  pergunta.setAttribute('aria-expanded', ativa);
+  resposta.classList.toggle('ativa')
+  const ativa = resposta.classList.contains('ativa')
+  pergunta.setAttribute('aria-expanded', ativa)
 }
 
 function eventosPerguntas(pergunta) {
-  pergunta.addEventListener('click', ativarPergunta);
+  pergunta.addEventListener('click', ativarPergunta)
 }
 
-perguntas.forEach(eventosPerguntas);
+perguntas.forEach(eventosPerguntas)
 
 // Galeria de Bicicletas
 
-const galeria = document.querySelectorAll('.bicicleta-imagens img');
-const galeriaContainer = document.querySelector('.bicicleta-imagens');
+const galeria = document.querySelectorAll('.bicicleta-imagens img')
+const galeriaContainer = document.querySelector('.bicicleta-imagens')
 
 function trocarImagem(event) {
-  const img = event.currentTarget;
-  const media = matchMedia('(min-width: 1000px)').matches;
-  console.log(media);
-  if(media) {
-  galeriaContainer.prepend(img);
+  const img = event.currentTarget
+  const media = matchMedia('(min-width: 1000px)').matches
+  console.log(media)
+  if (media) {
+    galeriaContainer.prepend(img)
   }
 }
 
 function eventosGaleria(img) {
-  img.addEventListener('click',  trocarImagem);
+  img.addEventListener('click', trocarImagem)
 }
 
-galeria.forEach(eventosGaleria);
+galeria.forEach(eventosGaleria)
+
+// Animação
+
+if (window.SimpleAnime) {
+  new SimpleAnime()
+}
